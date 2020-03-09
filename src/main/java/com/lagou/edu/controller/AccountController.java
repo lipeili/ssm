@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.URLDecoder;
 import java.util.stream.Collectors;
 
 @Controller
@@ -50,8 +51,8 @@ public class AccountController {
 
     @RequestMapping("/queryDetail")
     @ResponseBody
-    public Account queryDetail(String name) throws Exception {
-        return accountService.queryAccountList().stream().filter(e -> name.equals(e.getName())).collect(Collectors.toList()).get(0);
+    public Account queryDetail(int id) throws Exception {
+        return accountService.queryAccountList().stream().filter(e -> id == e.getId()).collect(Collectors.toList()).get(0);
     }
 
     @RequestMapping("/add")

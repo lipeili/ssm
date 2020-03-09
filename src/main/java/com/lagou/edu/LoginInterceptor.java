@@ -16,6 +16,9 @@ public class LoginInterceptor implements HandlerInterceptor {
         if ("1".equals(request.getSession().getAttribute("isAuth"))) {
             return true;
         }
+        response.setDateHeader("Expires", 0);
+        response.setHeader("Cache-Control", "no-cache, no-store");
+        response.setHeader("Pragma", "no-cache");
 
         response.sendRedirect(request.getContextPath() + "/index.jsp");
 

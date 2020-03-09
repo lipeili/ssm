@@ -2,10 +2,19 @@ package com.lagou.edu.pojo;
 
 public class Account {
 
+    private Integer id;
     private String name;
     private int money;
     private String cardNo;
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
