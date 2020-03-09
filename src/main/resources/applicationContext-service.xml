@@ -34,7 +34,7 @@
 
     <!-- redis连接配置，依次为主机ip，端口，是否使用池，(usePool=true时)redis的池配置 -->
     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-          p:host-name="r-2zeyzjzsgk9jnc1brq.redis.rds.aliyuncs.com" p:port="6379"  p:password="26PClRNq3FcYuyQkOEVB"
+          p:host-name="localhost" p:port="6379"
           p:database="10" p:pool-config-ref="jedisPoolConfig">
     </bean>
 
